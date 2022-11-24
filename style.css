@@ -93,6 +93,10 @@ input:focus {
   left: 87%;
 }
 
+.signup_link {
+  cursor: pointer;
+}
+
 /* media query */
 @media screen and (max-width: 650px) {
   form {
