@@ -34,7 +34,7 @@ function signIn(event) {
         const myDetails = localStorage.getItem("adminlogin");
         const theDetails = JSON.parse(myDetails);
         if (theDetails.hasOwnProperty("email")) {
-          window.location.href = "dashboard.html";
+          window.location.href = "Dashboard.html";
         } else {
           Swal.fire({
             icon: "info",
@@ -47,7 +47,6 @@ function signIn(event) {
       .catch((error) => console.log("error", error));
   }
 }
-//**********************************************//
 //**********************************************//
 //function for signing up
 function signUp(event) {
@@ -137,3 +136,5 @@ togglePassword.addEventListener("click", function (e) {
   // toggle the eye slash icon
   this.classList.toggle("fa-eye-slash");
 });
+//**********************************************//
+
