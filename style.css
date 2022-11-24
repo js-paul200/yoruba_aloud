@@ -38,6 +38,7 @@ body {
 }
 
 form {
+  position: relative;
   width: 70%;
   margin: 5% auto;
   background: transparent;
@@ -84,6 +85,14 @@ input:focus {
   display: none;
 }
 
+#togglePassword {
+  position: absolute;
+
+  cursor: pointer;
+  bottom: 36.5%;
+  left: 87%;
+}
+
 /* media query */
 @media screen and (max-width: 650px) {
   form {
@@ -102,5 +111,9 @@ input:focus {
   html,
   body {
     overflow-y: visible;
+  }
+
+  #togglePassword {
+    left: 83%;
   }
 }
