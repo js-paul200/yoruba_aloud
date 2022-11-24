@@ -72,11 +72,12 @@ input:focus {
   box-shadow: none;
   padding: 10px;
   border: none;
-  font-family: "Short Stack", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.3s ease;
 }
 
 .button-blue:hover {
-  background: rgba(15, 191, 250, 0.765);
+  background: #2d86dec1;
 }
 
 #spin {
