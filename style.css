@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  overflow-y: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.row {
+  margin: 0;
+  height: 100vh;
+}
+
+.signin_div {
+  background-color: #2d85de;
+}
+
+.signin_img {
+  padding: 4rem 6rem;
+}
+
+.signin_form {
+  background: url("/Images/spec.png") no-repeat center center / cover;
+  width: 100%;
+}
+
+.sign_title {
+  margin-top: 6rem !important;
+}
+
+form {
+  width: 70%;
+  margin: 5% auto;
+  background: transparent;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: rgb(17 17 26 / 10%) 0px 8px 24px,
+    rgb(17 17 26 / 10%) 0px 16px 56px, rgb(17 17 26 / 10%) 0px 24px 80px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f4f5f6;
+  width: 100%;
+}
+
+.button-blue {
+  width: 100%;
+  background-color: #2d85de;
+  color: #ffffff;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+  padding: 10px;
+  border: none;
+  font-family: "Short Stack", sans-serif;
+}
+
+.button-blue:hover {
+  background: rgba(15, 191, 250, 0.765);
+}
+
+#spin {
+  display: none;
+}
+
+/* media query */
+@media screen and (max-width: 650px) {
+  form {
+    width: 100%;
+  }
+
+  .signin_img {
+    height: 80vh;
+    width: 100%;
+  }
+
+  .signin_img {
+    padding: 1rem 1.5rem;
+  }
+
+  html,
+  body {
+    overflow-y: visible;
+  }
+}
