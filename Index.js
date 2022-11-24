@@ -1,16 +1,3 @@
-// Function for toggle password viewer
-const togglePassword = document.querySelector("#togglePassword");
-const password = document.querySelector("#password");
-
-togglePassword.addEventListener("click", function (e) {
-  // toggle the type attribute
-  const type =
-    password.getAttribute("type") === "password" ? "text" : "password";
-  password.setAttribute("type", type);
-  // toggle the eye slash icon
-  this.classList.toggle("fa-eye-slash");
-});
-
 //**********************************************//
 //function for signing in
 function signIn(event) {
@@ -92,7 +79,7 @@ function signUp(event) {
       text: "Password is incorrect",
       confirmButtonColor: "#2d85de",
     });
-  } else if (getpassword.length > 6) {
+  } else if (getPassword.length > 6) {
     Swal.fire({
       icon: "info",
       text: "Password should not be more than 6 characters",
@@ -138,3 +125,15 @@ function signUp(event) {
   }
 }
 //**********************************************//
+// Function for toggle password viewer
+const togglePassword = document.querySelector("#togglePassword");
+const password = document.querySelector("#password");
+
+togglePassword.addEventListener("click", function (e) {
+  // toggle the type attribute
+  const type =
+    password.getAttribute("type") === "password" ? "text" : "password";
+  password.setAttribute("type", type);
+  // toggle the eye slash icon
+  this.classList.toggle("fa-eye-slash");
+});
