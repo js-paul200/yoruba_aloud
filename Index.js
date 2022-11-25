@@ -125,31 +125,31 @@ function logIn(event) {
 // function login ends here
 
 // function to pop up for top three students
-var modal = document.getElementById("popup-modal");
+// var modal = document.getElementById("popup-modal");
 
-var modalBtn = document.getElementById("modal-Btn");
+// var modalBtn = document.getElementById("modal-Btn");
 
-var closeBtn = document.getElementsByClassName("closeBtn")[0];
+// var closeBtn = document.getElementsByClassName("closeBtn")[0];
 
-modalBtn.addEventListener("click", openmodal);
+// modalBtn.addEventListener("click", openmodal);
 
-closeBtn.addEventListener("click", closemodal);
+// closeBtn.addEventListener("click", closemodal);
 
-window.addEventListener("click", outsideclick);
+// window.addEventListener("click", outsideclick);
 
-function openmodal() {
-  modal.style.display = "block";
-}
+// function openmodal() {
+//   modal.style.display = "block";
+// }
 
-function closemodal() {
-  modal.style.display = "none";
-}
+// function closemodal() {
+//   modal.style.display = "none";
+// }
 
-function outsideclick(e) {
-  if (e.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// function outsideclick(e) {
+//   if (e.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
 // function for dashboard details
 function getDashApi() {
   const mySpin = document.querySelector(".pagemodal");
