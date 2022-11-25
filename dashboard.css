@@ -169,6 +169,22 @@ nav .sidebar-button i {
   padding: 1rem;
   font-weight: 500;
 }
+
+#myBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:active {
+  border: auto solid #fff;
+}
+
 .home-content .box .number {
   display: inline-block;
   font-size: 1rem;
@@ -255,6 +271,29 @@ table td {
   width: 35%;
 }
 
+/* Modal Header */
+.modal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 5px solid #000;
+  width: 100%;
+}
+
+.modal_card_content {
+  width: 100%;
+}
+
+.modal_card_content i {
+  font-size: 1.3rem;
+  padding-bottom: 5px;
+  color: #2d85de;
+}
+.modal_card_content .box-topic {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
 /* The Close Button */
 .close {
   color: #aaaaaa;
