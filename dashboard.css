@@ -242,6 +242,8 @@ table td {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  animation-name: modalopen;
+  animation-duration: 4s;
 }
 
 /* Modal Content */
@@ -250,7 +252,7 @@ table td {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 35%;
 }
 
 /* The Close Button */
@@ -277,24 +279,7 @@ table td {
     opacity: 1;
   }
 }
-.title {
-  color: #2d85de;
-  font-weight: bolder;
-}
-.details {
-  float: right;
-}
-.pagemodal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.82);
-}
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar {
@@ -320,6 +305,10 @@ table td {
     width: calc(100% - 220px);
     left: 220px;
   }
+
+  .modal-content {
+    width: 85%;
+  }
 }
 @media (max-width: 1150px) {
   .home-content .sales-boxes {
@@ -333,11 +322,17 @@ table td {
   .home-content .sales-boxes .top-sales {
     margin: 0;
   }
+  .modal-content {
+    width: 80%;
+  }
 }
 @media (max-width: 1000px) {
   .overview-boxes .box {
     width: calc(100% / 2 - 15px);
     margin-bottom: 15px;
+  }
+  .modal-content {
+    width: 80%;
   }
 }
 @media (max-width: 700px) {
@@ -353,6 +348,10 @@ table td {
   .home-content .sales-boxes .sales-details {
     width: 560px;
   }
+
+  .modal-content {
+    width: 75%;
+  }
 }
 @media (max-width: 550px) {
   .overview-boxes .box {
@@ -361,6 +360,9 @@ table td {
   }
   .sidebar.active ~ .home-section nav .profile-details {
     display: none;
+  }
+  .modal-content {
+    width: 68%;
   }
 }
 @media (max-width: 400px) {
@@ -385,5 +387,9 @@ table td {
   .sidebar.active ~ .home-section nav {
     left: 60px;
     width: calc(100% - 60px);
+  }
+
+  .modal-content {
+    width: 90%;
   }
 }
