@@ -104,7 +104,9 @@
           </div>
           <div class="box">
             <div class="right-side">
-              <div class="box-topic_2" id="modal-Btn">Total Three Students</div>
+              <div class="box-topic_2">
+                <button id="myBtn">Open Modal</button>
+              </div>
             </div>
           </div>
         </div>
@@ -128,16 +130,12 @@
         </div>
       </div>
 
-      <!-- pop up modal -->
-      <div id="popup-modal" class="mymodal">
-        <div class="modal-input">
-          <div class="modal-header">
-            <h2>Top three student</h2>
-            <span class="closeBtn">&times;</span>
-          </div>
-          <div class="modal-body">
-            <div class="allstudent"></div>
-          </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
         </div>
       </div>
     </section>
@@ -152,5 +150,6 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
     </script>
+    <script src="/Index.js"></script>
   </body>
 </html>
