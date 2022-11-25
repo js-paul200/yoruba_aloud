@@ -1,10 +1,11 @@
-/* Googlefont Poppins CDN Link */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Googlefont Poppins Import */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .sidebar {
   position: fixed;
@@ -23,7 +24,7 @@
 }
 .sidebar .logo-details i {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 900;
   color: #fff;
   min-width: 60px;
   text-align: center;
@@ -50,10 +51,10 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li a.active {
-  background: #081d45;
+  background: #2d85de;
 }
 .sidebar .nav-links li a:hover {
-  background: #081d45;
+  background: #fff;
 }
 .sidebar .nav-links li i {
   min-width: 60px;
@@ -61,10 +62,15 @@
   font-size: 18px;
   color: #fff;
 }
+
+.sidebar .nav-links li a:hover i,
+.sidebar .nav-links li a:hover .links_name {
+  color: #000;
+}
 .sidebar .nav-links li a .links_name {
   color: #fff;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   white-space: nowrap;
 }
 .sidebar .nav-links .log_out {
@@ -111,6 +117,7 @@
 }
 nav .sidebar-button i {
   font-size: 35px;
+  color: #2d85de;
   margin-right: 10px;
 }
 
@@ -128,69 +135,47 @@ nav .sidebar-button i {
 }
 .overview-boxes .box {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: calc(100% / 3 - 15px);
   background: #fff;
-  padding: 15px 14px;
+  padding: 1.5rem 1.3rem;
+  margin-top: 3rem;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
+.overview-boxes .right-side {
+  width: 100%;
+}
+
+.overview-boxes .right-side i {
+  font-size: 1.3rem;
+  padding-bottom: 5px;
+  color: #2d85de;
+}
 .overview-boxes .box-topic {
-  font-size: 20px;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
+
+.box-topic_2 {
+  background-color: #2d85de;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
   font-weight: 500;
 }
 .home-content .box .number {
   display: inline-block;
-  font-size: 35px;
+  font-size: 1rem;
   margin-top: -6px;
   font-weight: 500;
 }
-.home-content .box .indicator {
-  display: flex;
-  align-items: center;
-}
-.home-content .box .indicator i {
-  height: 20px;
-  width: 20px;
-  background: #8fdacb;
-  line-height: 20px;
-  text-align: center;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 20px;
-  margin-right: 5px;
-}
-.box .indicator i.down {
-  background: #e87d88;
-}
-.home-content .box .indicator .text {
-  font-size: 12px;
-}
-.home-content .box .cart {
-  display: inline-block;
-  font-size: 32px;
-  height: 50px;
-  width: 50px;
-  background: #cce5ff;
-  line-height: 50px;
-  text-align: center;
-  color: #66b0ff;
-  border-radius: 12px;
-  margin: -15px 0 0 6px;
-}
-.home-content .box .cart.two {
-  color: #2bd47d;
-  background: #c0f2d8;
-}
-.home-content .box .cart.three {
-  color: #ffc233;
-  background: #ffe8b3;
-}
-.home-content .box .cart.four {
-  color: #e05260;
-  background: #f7d4d7;
-}
+
 .home-content .total-order {
   font-size: 20px;
   font-weight: 500;
