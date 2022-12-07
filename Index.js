@@ -22,13 +22,13 @@ function signUp(event) {
       confirmButtonColor: "#2d85de",
     });
     getSpin.style.display = "none";
-  } else if (getConfirmPassword !== getpassword) {
+  } else if (getConfirmPassword !== getPassword) {
     Swal.fire({
       icon: "warning",
       text: "Password is incorrect",
       confirmButtonColor: "#2d85de",
     });
-  } else if (getpassword.lenght > 6) {
+  } else if (getPassword.lenght > 6) {
     Swal.fire({
       icon: "info",
       text: "Password should not be more than 6 characters",
@@ -46,7 +46,8 @@ function signUp(event) {
       body: regData,
     };
 
-    const url = "https://codesandbox.com.ng/yorubalearning/api/register_admin";
+    const url =
+      "https://pluralcodesandbox.com/yorubalearning/api/register_admin";
 
     fetch(url, regRequest)
       .then((response) => response.json())
@@ -76,7 +77,7 @@ function signUp(event) {
 // X FUNCTIONS FOR SIGNUP
 
 // FUNCTIONS FOR SIGNIN
-function logIn(event) {
+function signIn(event) {
   event.preventDefault();
   const getSpin = document.getElementById("spin");
   getSpin.style.display = "inline-block";
@@ -100,7 +101,7 @@ function logIn(event) {
       method: "POST",
       body: logData,
     };
-    const url = "https://codesandbox.com.ng/yorubalearning/api/admin_login";
+    const url = "https://pluralcodesandbox.com/yorubalearning/api/admin_login";
 
     fetch(url, logReg)
       .then((response) => response.json())
@@ -110,7 +111,7 @@ function logIn(event) {
         const myDetails = localStorage.getItem("adminlogin");
         const theDetails = JSON.parse(myDetails);
         if (theDetails.hasOwnProperty("email")) {
-          window.location.href = "dashboard.html";
+          window.location.href = "/Dashbaord.html";
         } else {
           Swal.fire({
             icon: "info",
@@ -129,13 +130,13 @@ function logIn(event) {
 var modal = document.getElementById("myModal");
 
 // GET THE BUTTON THAT OPENS THE MODAL
-var btn = document.getElementById("myBtn");
+var btnM = document.getElementById("myBtn");
 
 // GET THE SPAN ELEMENT THAT CLOSES THE MODAL
 var span = document.getElementsByClassName("close")[0];
 
 // WHEN CLICKED
-btn.onclick = function () {
+btnM.onclick = function () {
   modal.style.display = "block";
 };
 
@@ -168,7 +169,7 @@ function getDashApi() {
   };
 
   const url =
-    "https://codesandbox.com.ng/yorubalearning/api/admin/admin_dashboardapi";
+    "https://pluralcodesandbox.com/yorubalearning/api/admin/admin_dashboardapi";
 
   fetch(url, dashReq)
     .then((response) => response.json())
@@ -217,7 +218,7 @@ function getTopThree() {
   let data = [];
 
   const url =
-    "https://codesandbox.com.ng/yorubalearning/api/admin/top_three_students";
+    "https://pluralcodesandbox.com/yorubalearning/api/admin/top_three_students";
   fetch(url, dashReq)
     .then((response) => response.json())
     .then((result) => {
@@ -228,7 +229,7 @@ function getTopThree() {
       } else {
         result.map((item) => {
           data += `
-              <div class="card-details">
+              <div class="card-details" style="box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;padding: 25px;margin-top:18px;border-radius:16px;">
                   <p><span class="title">Name</span>: <span class="details">${item.name}</span></p>
                   <p><span class="title">Email</span>: <span class="details">${item.email}</span></p>
                   <p><span class="title">Phone</span>: <span class="details">${item.phone_number}</span></p>
@@ -262,7 +263,7 @@ function getAllStudents() {
   let data = [];
 
   const url =
-    "https://codesandbox.com.ng/yorubalearning/api/admin/get_all_students";
+    "https://pluralcodesandbox.com/yorubalearning/api/admin/get_all_students";
   fetch(url, dashReq)
     .then((response) => response.json())
     .then((result) => {
@@ -325,7 +326,7 @@ function createCategory(event) {
     };
 
     const url =
-      "https://codesandbox.com.ng/yorubalearning/api/admin/create_category";
+      "https://pluralcodesandbox.com/yorubalearning/api/admin/create_category";
     fetch(url, dashReq)
       .then((response) => response.json())
       .then((result) => {
@@ -371,7 +372,7 @@ function getCatList() {
   let data = [];
 
   const url =
-    "https://codesandbox.com.ng/yorubalearning/api/admin/category_list";
+    "https://pluralcodesandbox.com/yorubalearning/api/admin/category_list";
 
   fetch(url, listOptions)
     .then((response) => response.json())
