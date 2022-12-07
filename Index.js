@@ -1,4 +1,4 @@
-// function to create registration
+// FUNCTIONS FOR SIGNUP
 function signUp(event) {
   event.preventDefault();
   // calling the spinner on the button
@@ -73,8 +73,9 @@ function signUp(event) {
       .catch((error) => console.log("error", error));
   }
 }
+// X FUNCTIONS FOR SIGNUP
 
-// function to create login
+// FUNCTIONS FOR SIGNIN
 function logIn(event) {
   event.preventDefault();
   const getSpin = document.getElementById("spin");
@@ -122,33 +123,35 @@ function logIn(event) {
       .catch((error) => console.log("error", error));
   }
 }
+// FUNCTIONS FOR SIGNIN
 
-// Get the modal
+// GET THE MODAL
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
+// GET THE BUTTON THAT OPENS THE MODAL
 var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
+// GET THE SPAN ELEMENT THAT CLOSES THE MODAL
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal
+// WHEN CLICKED
 btn.onclick = function () {
   modal.style.display = "block";
 };
 
-// When the user clicks on <span> (x), close the modal
+// WHEN THE X CARRING SPAN IS CLICKED
 span.onclick = function () {
   modal.style.display = "none";
 };
 
-// When the user clicks anywhere outside of the modal, close it
+// WHEN THE USER CLICK ANYWHERE OUTSIDE THE POPUP
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 };
-// function for dashboard details
+
+// FUNCTION FOR DASHBOARD POPULATION
 function getDashApi() {
   const mySpin = document.querySelector(".pagemodal");
   mySpin.style.display = "block";
@@ -195,9 +198,9 @@ function getDashApi() {
     .catch((error) => console.log("error", error));
 }
 getDashApi();
-// dashboard function api ends here
+// X FUNCTION FOR DASHBOARD POPULATION
 
-// function to get top three students
+// FUNCTION TO GET TOP 3 STUDENTS
 function getTopThree() {
   const getToken = localStorage.getItem("adminlogin");
   const tokenItem = JSON.parse(getToken);
@@ -240,9 +243,9 @@ function getTopThree() {
     .catch((error) => console.log("error", error));
 }
 getTopThree();
-// top three students function ends here
+// X FUNCTION TO GET TOP 3 STUDENTS
 
-// function to get all students
+// FUNCTIONS TO GET ALL STUDENTS
 function getAllStudents() {
   const getToken = localStorage.getItem("adminlogin");
   const tokenItem = JSON.parse(getToken);
@@ -285,9 +288,9 @@ function getAllStudents() {
     .catch((error) => console.log("error", error));
 }
 getAllStudents();
-// get all students functions ends here
+// x FUNCTIONS TO GET ALL STUDENTS
 
-// function to create-category section
+// FUNCTIONS TO GET CATEGORIES
 function createCategory(event) {
   event.preventDefault();
   const getSpin = document.querySelector(".spin");
@@ -348,8 +351,9 @@ function createCategory(event) {
       .catch((error) => console.log("error", error));
   }
 }
+// X FUNCTIONS TO GET CATEGORIES
 
-// function for category list
+// FUNCTION TO GET CATEGORY LIST
 function getCatList() {
   const getScrollItem = document.querySelector(".scroll-object");
   const getToken = localStorage.getItem("adminlogin");
@@ -391,5 +395,6 @@ function getCatList() {
 }
 
 getCatList();
+// X FUNCTION TO GET CATEGORY LIST
 
 // *******************************************//
