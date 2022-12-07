@@ -230,11 +230,11 @@ function getTopThree() {
         result.map((item) => {
           data += `
               <div class="card-details" style="box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;padding: 25px;margin-top:18px;border-radius:16px;">
-                  <p><span class="title">Name</span>: <span class="details">${item.name}</span></p>
-                  <p><span class="title">Email</span>: <span class="details">${item.email}</span></p>
-                  <p><span class="title">Phone</span>: <span class="details">${item.phone_number}</span></p>
-                  <p><span class="title">Position</span>: <span class="details">${item.position}</span></p>
-                  <p><span class="title">Score</span>: <span class="details">${item.total_score}</span></p>
+                  <p><span style="color:#2d85de;" class="title">Name</span>: <span class="details">${item.name}</span></p>
+                  <p><span style="color:#2d85de;" class="title">Email</span>: <span class="details">${item.email}</span></p>
+                  <p><span style="color:#2d85de;" class="title">Phone</span>: <span class="details">${item.phone_number}</span></p>
+                  <p><span style="color:#2d85de;" class="title">Position</span>: <span class="details">${item.position}</span></p>
+                  <p><span style="color:#2d85de;" class="title">Score</span>: <span class="details">${item.total_score}</span></p>
               </div>
               `;
         });

@@ -254,6 +254,11 @@ table td {
   gap: 0.6rem;
 }
 
+.modal_card_content .topic span {
+  color: #2d85de;
+  font-weight: bold;
+}
+
 /* Pop up modal */
 /* The Modal (background) */
 .modal {
