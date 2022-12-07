@@ -247,6 +247,13 @@ table td {
   padding-left: 20px;
 }
 
+.modal_card_content .topic {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.6rem;
+}
+
 /* Pop up modal */
 /* The Modal (background) */
 .modal {
@@ -318,7 +325,7 @@ table td {
 /* Pop up modal */
 
 .pagemodal {
-  display: none;
+  /* display: none; */
   position: fixed;
   z-index: 1;
   left: 0;
@@ -339,8 +346,17 @@ table td {
   height: 120px;
   margin: -76px 0 0 -76px;
   border-radius: 50%;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  -webkit-animation: pulse-animation 2s linear infinite;
+  animation: pulse-animation 2s linear infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 20px transparent;
+  }
 }
 
 @keyframes modalopen {
