@@ -180,10 +180,12 @@ nav .sidebar-button i {
   font-weight: 500;
   color: #fff;
   cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.324);
 }
 
-#myBtn:active {
-  border: auto solid #fff;
+#myBtn:active,
+#myBtn:hover {
+  outline: #000;
 }
 
 .home-content .box .number {
@@ -277,7 +279,7 @@ table td {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 5px solid #000;
+  border-bottom: 1px solid #000;
   width: 100%;
 }
 
