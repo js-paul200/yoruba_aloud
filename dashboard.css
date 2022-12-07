@@ -116,6 +116,7 @@
   font-weight: 500;
 }
 nav .sidebar-button i {
+  cursor: pointer;
   font-size: 35px;
   color: #2d85de;
   margin-right: 10px;
@@ -281,6 +282,10 @@ table td {
 }
 
 .modal_card_content {
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 2rem;
   width: 100%;
 }
 
