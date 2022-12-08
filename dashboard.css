@@ -1,11 +1,11 @@
 /* Googlefont Poppins Import */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Short Stack", cursive;
 }
 .sidebar {
   position: fixed;
@@ -31,7 +31,7 @@
 }
 .sidebar .logo-details .logo_name {
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
 }
 .sidebar .nav-links {
@@ -43,6 +43,7 @@
   height: 50px;
 }
 .sidebar .nav-links li a {
+  color: #fff;
   height: 100%;
   width: 100%;
   display: flex;
@@ -51,16 +52,16 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li a.active {
-  background: #2d85de;
+  background: #fff;
+  color: #000 !important;
 }
 .sidebar .nav-links li a:hover {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.245);
 }
 .sidebar .nav-links li i {
   min-width: 60px;
   text-align: center;
   font-size: 18px;
-  color: #fff;
 }
 
 .sidebar .nav-links li a:hover i,
@@ -68,8 +69,7 @@
   color: #000;
 }
 .sidebar .nav-links li a .links_name {
-  color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
 }
