@@ -536,6 +536,7 @@ table td {
 
 .category_box form button:hover {
   cursor: pointer;
+  opacity: 0.9;
 }
 
 .category_main {
@@ -545,12 +546,60 @@ table td {
   align-items: center;
   justify-content: center;
   margin: auto;
+  margin-top: 5rem;
 }
 
 .category_done {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: auto;
-  width: 350px;
+  height: 400px;
+  width: 400px;
   padding: 25px 18px;
   border-radius: 15px;
+  overflow-y: scroll;
+}
+
+.category_done .img {
+  width: 100%;
+}
+
+.category_done .img img {
+  width: 100%;
+}
+
+.category_done .category_name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category_name {
+  margin-top: 1rem;
+  padding: 25px auto;
+}
+
+.category_name button {
+  padding: 10px 6px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.category_name button:nth-child(1) {
+  background-color: #2d85de;
+  color: #fff;
+}
+.category_name button:nth-child(2) {
+  background-color: red;
+  color: #fff;
+}
+
+.category_name button:nth-child(1):hover,
+.category_name button:nth-child(2):hover {
+  opacity: 0.9;
+}
+
+.category_done .cat {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  margin-bottom: 1rem;
 }
