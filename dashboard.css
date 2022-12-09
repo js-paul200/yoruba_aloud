@@ -81,7 +81,7 @@
 .home-section {
   position: relative;
   background: #f5f5f5;
-  min-height: 100vh;
+  min-height: 150vh;
   width: calc(100% - 240px);
   left: 240px;
   transition: all 0.5s ease;
@@ -485,4 +485,72 @@ table td {
   .modal-content {
     width: 90%;
   }
+}
+
+.category_section {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category_section span {
+  color: #2d85de;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.category_box {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: auto;
+  width: 350px;
+  padding: 25px 18px;
+  border-radius: 15px;
+}
+
+.category_box form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.category_box form input {
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  width: 100%;
+  padding: 10px 6px;
+}
+
+.category_box form button {
+  align-self: center;
+  width: 100%;
+  padding: 10px 6px;
+  background-color: #2d85de;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+}
+
+.category_box form button:hover {
+  cursor: pointer;
+}
+
+.category_main {
+  width: 80%;
+  padding-right: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.category_done {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: auto;
+  width: 350px;
+  padding: 25px 18px;
+  border-radius: 15px;
 }
