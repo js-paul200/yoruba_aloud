@@ -198,40 +198,26 @@
                 <label for="">Categories</label>
                 <input
                   type="text"
-                  name="categories"
+                  name="category"
                   placeholder="Enter Categories Here"
+                  id="cat_name"
                 />
                 <label for="">Company Images</label>
-                <input type="file" name="image" />
-                <button>Create Category</button>
+                <input type="file" name="img" id="cat_img" />
+                <button onclick="createCategory(event)">
+                  <div
+                    class="spinner-border spinner-border-sm text-light spin"
+                    role="status"
+                  >
+                    <span class="sr-only"></span>
+                  </div>
+                  Create Category
+                </button>
               </form>
             </div>
           </div>
           <div class="category_done">
-            <div class="cat">
-              <div class="img">
-                <img src="/Images/clone.jpg" alt="" />
-              </div>
-              <div class="category_name">
-                <span>Sample Category</span>
-                <div>
-                  <button>Update</button>
-                  <button>Delete</button>
-                </div>
-              </div>
-            </div>
-            <div class="cat">
-              <div class="img">
-                <img src="/Images/clone.jpg" alt="" />
-              </div>
-              <div class="category_name">
-                <span>Sample Category</span>
-                <div>
-                  <button>Update</button>
-                  <button>Delete</button>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -266,6 +252,7 @@
       };
     </script>
     <script src="/Index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/Auth.js"></script>
   </body>
 </html>

@@ -297,8 +297,8 @@ function createCategory(event) {
   const getSpin = document.querySelector(".spin");
   getSpin.style.display = "inline-block";
 
-  const categoryName = document.getElementById("sec").value;
-  const getImage = document.getElementById("image").files[0];
+  const categoryName = document.getElementById("cat_name").value;
+  const getImage = document.getElementById("cat_img").files[0];
 
   if (categoryName === "" || getImage === "") {
     Swal.fire({
@@ -352,11 +352,10 @@ function createCategory(event) {
       .catch((error) => console.log("error", error));
   }
 }
-// X FUNCTIONS TO GET CATEGORIES
 
-// FUNCTION TO GET CATEGORY LIST
+// FUNCTION FOR CATEGORY LIST
 function getCatList() {
-  const getScrollItem = document.querySelector(".scroll-object");
+  const getScrollItem = document.querySelector(".category_done");
   const getToken = localStorage.getItem("adminlogin");
   const token = JSON.parse(getToken);
   const myToken = token.token;
@@ -380,15 +379,17 @@ function getCatList() {
       console.log(result);
       result?.map((item) => {
         data += `
-          <div class="search-card">
-            <a href="details.html?id=${item.id}&name=${item.name}"><img src=${item.image} alt="image" /></a>
-            <p>${item.name}</p>
-            <div class="text-right">
-              <button class="update-button" onclick="openModal(${item.id})">Update</buton>
-              <button class="delete-button" onclick="deleteCategory(${item.id})">Delete</buton>
+            <div class="search-card">
+              <a href="details.html?id=${item.id}&name=${item.name}"><img src=${item.image} alt="image" /></a>
+              <div class="button">
+              <p>${item.name}</p>
+              <div class="text-right">
+                <button class="update-button" onclick="upmodal(${item.id})">Update</button>
+                <button class="delete-button" onclick="deleteCategory(${item.id})">Delete</button>
+              </div>
+              </div>
             </div>
-          </div>
-          `;
+            `;
         getScrollItem.innerHTML = data;
       });
     })
@@ -396,6 +397,6 @@ function getCatList() {
 }
 
 getCatList();
-// X FUNCTION TO GET CATEGORY LIST
+// X FUNCTIONS TO GET CATEGORIES
 
 // *******************************************//
