@@ -399,4 +399,114 @@ function getCatList() {
 getCatList();
 // X FUNCTIONS TO GET CATEGORIES
 
+// FUNCTION FOR UPDATE CATEGORY
+function upmodal(updateId) {
+  localStorage.setItem("upId", updateId);
+  const upform = document.querySelector(".updateform");
+  upform.style.display = "block";
+
+  const getToken = localStorage.getItem("adminlogin");
+  const token = JSON.parse(getToken);
+  const theToken = token.token;
+
+  let third = localStorage.getItem("upId");
+
+  const headerItem = new Headers();
+  headerItem.append("Authorization", `Bearer ${theToken}`);
+
+  const dashReq = {
+    method: "GET",
+    headers: headerItem,
+  };
+
+  const url = `http://pluralcodesandbox.com/yorubalearning/api/admin/get_details?category_id=${third}`;
+  fetch(url, dashReq)
+    .then((response) => response.json())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+}
+//X FUNCTION FOR UPDATE CATEGORY
+
+// FUNCTION FOR CLOSING UPDATE CATEGORY
+function closeCatModal() {
+  let pop = document.querySelector(".updateform");
+  pop.style.display = "none";
+}
+// FUNCTION FOR CLOSING UPDATE CATEGORY
+
+// FUNCTION FOR UPDATE CATEGORY
+function UpdateCategory(event) {
+  event.preventDefault();
+
+  const categoryImageName = document.getElementById("updatename").value;
+  const categoryImage = document.getElementById("updateimage").files[0];
+
+  const catID = localStorage.getItem("upId");
+
+  if (categoryImageName === "") {
+    Swal.fire({
+      icon: "info",
+      text: "All fields are required",
+      confirmButtonColor: "#2D85DE",
+    });
+  } else {
+    const spinRoll = document.querySelector(".roller");
+    spinRoll.style.display = "inline-block";
+
+    const upToken = localStorage.getItem("adminlogin");
+    const getUpToken = JSON.parse(upToken);
+    const updateToken = getUpToken.token;
+
+    const updateHeader = new Headers();
+    updateHeader.append("Authorization", `Bearer ${updateToken}`);
+
+    const updateData = new FormData();
+    updateData.append("name", categoryImageName);
+    updateData.append("image", categoryImage);
+    updateData.append("category_id", catID);
+
+    const updateRequest = {
+      method: "POST",
+      headers: updateHeader,
+      body: updateData,
+    };
+    const url =
+      "https://pluralcodesandbox.com/yorubalearning/api/admin/update_category";
+
+    fetch(url, updateRequest)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result.status === "success") {
+          location.reload();
+        } else {
+          Swal.fire({
+            icon: "info",
+            text: "Update Unsuccessful!",
+            confirmButtonColor: "#2D85DE",
+          });
+        }
+      })
+      .catch((error) => console.log("error", error));
+  }
+}
+// FUNCTION FOR UPDATE CATEGORY
+
+// // FUNCTION FOR UPDATE CATEGORY
+function deleteCategory(id) {
+  const dcToken = localStorage.getItem("adminlogin");
+  const cutToken = JSON.parse(dcToken);
+  const outToken = cutToken.token;
+
+  const cutHeaders = new Headers();
+  cutHeaders.append("Authorization", `Bearer ${outToken}`);
+
+  const dashReq = {
+    method: "GET",
+    headers: cutHeaders,
+  };
+  const url = ``;
+}
+// FUNCTION FOR UPDATE CATEGORY
+
 // *******************************************//

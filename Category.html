@@ -216,9 +216,7 @@
               </form>
             </div>
           </div>
-          <div class="category_done">
-
-          </div>
+          <div class="category_done"></div>
         </div>
       </div>
 
@@ -237,6 +235,61 @@
             </div>
             <div class="box-topic allstudent">*</div>
           </div>
+        </div>
+      </div>
+
+      <!--UPDATE FORM  -->
+      <div id="updatemodal" class="updateform">
+        <div class="update-input">
+          <div class="update-header">
+            <h2>Update category</h2>
+            <span class="xbtn" onclick="closeCatModal()">&times;</span>
+          </div>
+          <button class="button-change">Change image</button>
+
+          <form id="udform">
+            <label
+              for="Update"
+              id="email"
+              class="font-poppins font-size-16 font-weight-800"
+              >Update Name</label
+            >
+            <input
+              type="text"
+              name="category"
+              id="updatename"
+              class="mb-3"
+              placeholder="Enter Categories Here"
+            />
+
+            <label
+              for="category"
+              class="font-poppins font-size-16 font-weight-800"
+            >
+              Update Category Images</label
+            >
+            <input
+              type="file"
+              name="img"
+              id="updateimage"
+              class="input mb-3"
+              placeholder="Enter Categories Here"
+            />
+
+            <button
+              class="button button-create font-weight-800"
+              type="button"
+              onclick="UpdateCategory(event)"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-light roller"
+                role="status"
+              >
+                <span class="sr-only"></span>
+              </div>
+              Update Category
+            </button>
+          </form>
         </div>
       </div>
     </section>
