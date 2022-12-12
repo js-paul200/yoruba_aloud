@@ -422,8 +422,18 @@ function upmodal(updateId) {
   const url = `http://pluralcodesandbox.com/yorubalearning/api/admin/get_details?category_id=${third}`;
   fetch(url, dashReq)
     .then((response) => response.json())
-    .then((result) => console.log(result))
+    .then((result) => {
+      console.log(result);
+      const categoryName = document.getElementById("updatename");
+      categoryName.setAttribute("value", `${result.name}`);
+
+      const categoryImage = document.getElementById("updateimage");
+      categoryImage.setAttribute("value", `${result.image}`);
+    })
     .catch((error) => console.log("error", error));
+
+  const popmodal = document.getElementById("updatemodal");
+  popmodal.style.display = "block";
 }
 //X FUNCTION FOR UPDATE CATEGORY
 

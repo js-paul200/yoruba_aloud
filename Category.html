@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- DASHBOARD CSS LINK -->
     <link rel="stylesheet" href="dashboard.css" />
+
     <!-- Boxicons CDN LINK -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
@@ -243,41 +244,40 @@
         <div class="update-input">
           <div class="update-header">
             <h2>Update category</h2>
-            <span class="xbtn" onclick="closeCatModal()">&times;</span>
+            <span class="update_modal_btn" onclick="closeCatModal()"
+              ><i class="bx bx-window-close"></i
+            ></span>
           </div>
-          <button class="button-change">Change image</button>
-
-          <form id="udform">
-            <label
-              for="Update"
-              id="email"
-              class="font-poppins font-size-16 font-weight-800"
-              >Update Name</label
+          <button class="change_image" onclick="chooseimage()">
+            <div
+              class="spinner-border spinner-border-sm text-light roller"
+              role="status"
             >
+              <span class="sr-only"></span>
+            </div>
+            Change image
+          </button>
+
+          <form id="update_form">
+            <label for="Update" id="email">Update Name</label>
+
             <input
               type="text"
               name="category"
               id="updatename"
-              class="mb-3"
               placeholder="Enter Categories Here"
             />
 
-            <label
-              for="category"
-              class="font-poppins font-size-16 font-weight-800"
-            >
-              Update Category Images</label
-            >
+            <label for="category"> Update Category Images</label>
             <input
               type="file"
               name="img"
               id="updateimage"
-              class="input mb-3"
               placeholder="Enter Categories Here"
             />
 
             <button
-              class="button button-create font-weight-800"
+              class="update_btn"
               type="button"
               onclick="UpdateCategory(event)"
             >
