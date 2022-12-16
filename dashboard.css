@@ -64,6 +64,8 @@
 }
 .sidebar .nav-links li a:hover {
   background: rgba(255, 255, 255, 0.245);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 .sidebar .nav-links li i {
   min-width: 60px;

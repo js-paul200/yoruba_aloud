@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- DASHBOARD CSS LINK -->
+    <link rel="stylesheet" href="dashboard.css" />
+
+    <!-- Boxicons CDN LINK -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Categories</title>
+  </head>
+  <body>
+    <!-- PAGEMODAL -->
+    <div class="pagemodal">
+      <div class="preloader">
+        <svg
+          width="200"
+          height="200"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+          class="lds-ripple"
+          style="background: 0 0"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="4.719"
+            fill="none"
+            stroke="#1d3f72"
+            stroke-width="2"
+          >
+            <animate
+              attributeName="r"
+              calcMode="spline"
+              values="0;40"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0 0.2 0.8 1"
+              begin="-1.5s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              calcMode="spline"
+              values="1;0"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0.2 0 0.8 1"
+              begin="-1.5s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle
+            cx="50"
+            cy="50"
+            r="27.591"
+            fill="none"
+            stroke="#5699d2"
+            stroke-width="2"
+          >
+            <animate
+              attributeName="r"
+              calcMode="spline"
+              values="0;40"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0 0.2 0.8 1"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              calcMode="spline"
+              values="1;0"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0.2 0 0.8 1"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </svg>
+      </div>
+    </div>
+    <!-- PAGEMODAL -->
+    <!-- NAVIGATION COLUMN -->
+    <div class="sidebar">
+      <div class="logo-details">
+        <!-- LOGO AND ADMIN  -->
+        <i class="bx bx-yen"></i>
+        <span class="logo_name">Yoruba Aloud</span>
+      </div>
+      <!-- NAVIGATION COLUMN & LINKS -->
+      <ul class="nav-links">
+        <li>
+          <a href="/Dashbaord.html">
+            <i class="bx bx-home-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <i class="bx bx-category-alt"></i>
+            <span class="links_name">Categories</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-chalkboard"></i>
+            <span class="links_name">Learning materials</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-question-mark"></i>
+            <span class="links_name">Quiz</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Admin Profile</span>
+          </a>
+        </li>
+
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span onclick="logout(event)" class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard" id="adminId">Yoruba Aloud</span>
+        </div>
+      </nav>
+      <!-- HOME CONTENT BOXES -->
+      <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <i class="bx bx-category-alt"></i>
+              <div class="box-topic">Total Categories</div>
+              <div class="number category"></div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <i class="bx bx-chalkboard"></i>
+              <div class="box-topic">Learning Materials</div>
+              <div class="number learn"></div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <i class="bx bxs-dashboard"></i>
+              <div class="box-topic">Total Subcategories</div>
+              <div class="number total"></div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <i class="bx bx-question-mark"></i>
+              <div class="box-topic">Total Quiz</div>
+              <div class="number quiz"></div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <i class="bx bx-user"></i>
+              <div class="box-topic">Total Students</div>
+              <div class="number students"></div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic_2">
+                <button id="myBtn" class="top-three">Top Three Students</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="category_main">
+          <div class="category_section">
+            <span>Add Categories</span>
+            <div class="category_box">
+              <form action="">
+                <label for="">Categories</label>
+                <input
+                  type="text"
+                  name="category"
+                  placeholder="Enter Categories Here"
+                  id="cat_name"
+                />
+                <label for="">Company Images</label>
+                <input type="file" name="img" id="cat_img" />
+                <button onclick="createCategory(event)">
+                  <div
+                    class="spinner-border spinner-border-sm text-light spin"
+                    role="status"
+                  >
+                    <span class="sr-only"></span>
+                  </div>
+                  Create Category
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="category_done"></div>
+        </div>
+      </div>
+
+      <!-- POPUP MODAL -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal_header">
+            <span>Top Three Students</span>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal_card_content">
+            <div class="topic">
+              <i class="bx bx-user"></i>
+              <span>Top Three Student</span>
+            </div>
+            <div class="box-topic allstudent">*</div>
+          </div>
+        </div>
+      </div>
+
+      <!--UPDATE FORM  -->
+      <div id="updatemodal" class="updateform">
+        <div class="update-input">
+          <div class="update-header">
+            <h2>Update category</h2>
+            <span class="update_modal_btn" onclick="closeCatModal()"
+              ><i class="bx bx-window-close"></i
+            ></span>
+          </div>
+          <button class="change_image" onclick="chooseimage()">
+            <div
+              class="spinner-border spinner-border-sm text-light roller"
+              role="status"
+            >
+              <span class="sr-only"></span>
+            </div>
+            Change image
+          </button>
+
+          <form id="update_form">
+            <label for="Update" id="email">Update Name</label>
+
+            <input
+              type="text"
+              name="category"
+              id="updatename"
+              placeholder="Enter Categories Here"
+            />
+
+            <label for="category"> Update Category Images</label>
+            <input
+              type="file"
+              name="img"
+              id="updateimage"
+              placeholder="Enter Categories Here"
+            />
+
+            <button
+              class="update_btn"
+              type="button"
+              onclick="UpdateCategory(event)"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-light roller"
+                role="status"
+              >
+                <span class="sr-only"></span>
+              </div>
+              Update Category
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+    <script src="/Index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/Auth.js"></script>
+  </body>
+</html>
