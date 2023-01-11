@@ -229,7 +229,7 @@ function getTopThree() {
       } else {
         result.map((item) => {
           data += `
-              <div class="card-details" style="box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;padding: 25px;margin-top:18px;border-radius:16px;">
+              <div class="card-details" style="box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;padding: 25px;margin:auto;margin-top:18px;border-radius:16px;width:99%">
                   <p><span style="color:#2d85de;" class="title">Name</span>: <span class="details">${item.name}</span></p>
                   <p><span style="color:#2d85de;" class="title">Email</span>: <span class="details">${item.email}</span></p>
                   <p><span style="color:#2d85de;" class="title">Phone</span>: <span class="details">${item.phone_number}</span></p>
@@ -288,7 +288,7 @@ function getAllStudents() {
     })
     .catch((error) => console.log("error", error));
 }
-getAllStudents();
+// getAllStudents();
 // x FUNCTIONS TO GET ALL STUDENTS
 
 // FUNCTIONS TO GET CATEGORIES
@@ -502,7 +502,7 @@ function UpdateCategory(event) {
 }
 // FUNCTION FOR UPDATE CATEGORY
 
-// // FUNCTION FOR UPDATE CATEGORY
+// // FUNCTION FOR DELETE CATEGORY
 function deleteCategory(id) {
   const dcToken = localStorage.getItem("adminlogin");
   const cutToken = JSON.parse(dcToken);

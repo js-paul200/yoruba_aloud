@@ -307,8 +307,8 @@ table td {
 
 .modal_card_content {
   border-radius: 15px;
-  padding: 25px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   margin-top: 2rem;
   width: 100%;
 }
@@ -323,6 +323,7 @@ table td {
   padding-bottom: 1rem;
   font-weight: 500;
 }
+
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -430,6 +431,7 @@ table td {
 }
 
 .category_box form input {
+  outline: none;
   border: 1px solid rgba(0, 0, 0, 0.13);
   width: 100%;
   padding: 10px 6px;
@@ -536,11 +538,12 @@ table td {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .update-input {
-  width: 100vw;
+  width: 35vw;
   margin: 10% auto;
   box-shadow: 0 5px 8px 0 rgb(0 0 0 / 20%), 0 7px 20px 0 rgb(0 0 0 / 17%);
   height: 55vh;
   background: #fff;
+  overflow: hidden;
 }
 .update-header {
   display: flex;
@@ -606,6 +609,7 @@ table td {
   border: none;
   cursor: pointer;
 }
+
 /* media query */
 @media screen and (max-width: 650px) {
   .update-input {
@@ -729,7 +733,13 @@ table td {
     display: none;
   }
   .modal-content {
-    width: 68%;
+    width: 80%;
+    margin-left: 4.5rem;
+    padding: 10px;
+  }
+
+  .card-details {
+    width: 100%;
   }
 
   .category_main {
