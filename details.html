@@ -16,78 +16,7 @@
   </head>
   <body>
     <!-- PAGEMODAL -->
-    <div class="pagemodal">
-      <div class="preloader">
-        <svg
-          width="200"
-          height="200"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="xMidYMid"
-          class="lds-ripple"
-          style="background: 0 0"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="4.719"
-            fill="none"
-            stroke="#1d3f72"
-            stroke-width="2"
-          >
-            <animate
-              attributeName="r"
-              calcMode="spline"
-              values="0;40"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0 0.2 0.8 1"
-              begin="-1.5s"
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="opacity"
-              calcMode="spline"
-              values="1;0"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0.2 0 0.8 1"
-              begin="-1.5s"
-              repeatCount="indefinite"
-            />
-          </circle>
-          <circle
-            cx="50"
-            cy="50"
-            r="27.591"
-            fill="none"
-            stroke="#5699d2"
-            stroke-width="2"
-          >
-            <animate
-              attributeName="r"
-              calcMode="spline"
-              values="0;40"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0 0.2 0.8 1"
-              begin="0s"
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="opacity"
-              calcMode="spline"
-              values="1;0"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0.2 0 0.8 1"
-              begin="0s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </svg>
-      </div>
-    </div>
+
     <!-- PAGEMODAL -->
     <!-- NAVIGATION COLUMN -->
     <div class="sidebar">
@@ -105,7 +34,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" class="active">
             <i class="bx bx-category-alt"></i>
             <span class="links_name">Categories</span>
           </a>
@@ -145,6 +74,108 @@
         </div>
       </nav>
       <!-- HOME CONTENT BOXES -->
+      <div class="home-content">
+        <div class="category_main">
+          <div class="category_section">
+            <span>Add Categories</span>
+            <div class="category_box">
+              <form action="">
+                <label for="">Categories</label>
+                <input
+                  type="text"
+                  name="category"
+                  placeholder="Enter Categories Here"
+                  id="cat_name"
+                />
+                <label for="">Company Images</label>
+                <input type="file" name="img" id="cat_img" />
+                <button onclick="createCategory(event)">
+                  <div
+                    class="spinner-border spinner-border-sm text-light spin"
+                    role="status"
+                  >
+                    <span class="sr-only"></span>
+                  </div>
+                  Create Category
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="category_done"></div>
+        </div>
+      </div>
+
+      <!-- POPUP MODAL -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal_header">
+            <span>Top Three Students</span>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal_card_content">
+            <div class="topic">
+              <i class="bx bx-user"></i>
+              <span>Top Three Student</span>
+            </div>
+            <div class="box-topic allstudent">*</div>
+          </div>
+        </div>
+      </div>
+
+      <!--UPDATE FORM  -->
+      <div id="updatemodal" class="updateform">
+        <div class="update-input">
+          <div class="update-header">
+            <h2>Update category</h2>
+            <span class="update_modal_btn" onclick="closeCatModal()"
+              ><i class="bx bx-window-close"></i
+            ></span>
+          </div>
+          <button class="change_image" onclick="chooseimage()">
+            <div
+              class="spinner-border spinner-border-sm text-light roller"
+              role="status"
+            >
+              <span class="sr-only"></span>
+            </div>
+            Change image
+          </button>
+
+          <form id="update_form">
+            <label for="Update" id="email">Update Name</label>
+
+            <input
+              type="text"
+              name="category"
+              id="updatename"
+              placeholder="Enter Categories Here"
+            />
+
+            <label for="category"> Update Category Images</label>
+            <input
+              type="file"
+              name="img"
+              id="updateimage"
+              placeholder="Enter Categories Here"
+            />
+
+            <button
+              class="update_btn"
+              type="button"
+              onclick="UpdateCategory(event)"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-light roller"
+                role="status"
+              >
+                <span class="sr-only"></span>
+              </div>
+              Update Category
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 
     <script>
@@ -157,7 +188,7 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
     </script>
-    <script src="/Index.js"></script>
+    <script src="/category.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/Auth.js"></script>
   </body>
