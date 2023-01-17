@@ -254,3 +254,11 @@ function deleteCategory(upId) {
 }
 
 // *******************************************//
+// function to logout
+function logout() {
+  console.log("here");
+  const lockout = localStorage.clear();
+  setTimeout(() => {
+    location.href = "./Index.html";
+  }, 3000);
+}

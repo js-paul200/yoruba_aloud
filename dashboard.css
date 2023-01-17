@@ -393,17 +393,20 @@ table td {
   width: 100%;
   gap: 5rem;
   padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  place-items: center;
   margin: auto;
   margin-top: 5rem;
 }
 
 .category_section {
   margin: 3rem auto;
-  padding: 2rem;
-  width: 50%;
+  padding: 1rem;
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -688,12 +691,10 @@ table td {
   }
 
   .category_main {
-    width: 100vw;
-    margin: auto 1.8rem;
-    padding: 1rem 1rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    margin: auto 0.8rem;
+    padding: 1rem 0rem;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .category_main .category_section .category_box {
@@ -759,27 +760,26 @@ table td {
   }
 
   .category_main {
-    width: 90vw;
+    width: 100%;
     padding: 0;
     margin-left: -0.4rem;
   }
 
   .category_main .category_section .category_box {
     width: 80vw;
-    margin-left: 1.69rem;
   }
 
   .category_section {
     width: 100%;
-    margin-top: -1rem;
+    margin: auto;
+    padding-left: 3.5rem;
   }
 
   .category_done {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-    width: 90vw;
-    padding: 25px 18px;
-    margin-left: 3rem;
+    width: 100%;
+    margin: auto;
+    padding: 18px 18px;
     border-radius: 15px;
     overflow-y: scroll;
     overflow-x: hidden;
