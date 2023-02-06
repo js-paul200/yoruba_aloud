@@ -14,13 +14,6 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap CSS CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-      crossorigin="anonymous"
-    />
     <title>Categories</title>
   </head>
   <body>
@@ -86,11 +79,10 @@
       <main>
         <!-- create subcategory form -->
         <div class="subname">
+          <div><h1>Update Category</h1></div>
           <form action="subcatform">
-            <div class="name">
-              <label for="name" class="poppins font-size-18 font-weight-600"
-                >Subcategory Name</label
-              >
+            <div class="name_subcategory">
+              <label for="name">Subcategory Name</label>
               <input
                 type="text"
                 id="subcategoryname"
@@ -99,10 +91,8 @@
               />
             </div>
 
-            <div class="email">
-              <label for="Email" class="poppins font-size-18 font-weight-600"
-                >Subcategory Images</label
-              >
+            <div class="images_subcategory">
+              <label for="Email">Subcategory Images</label>
               <input
                 type="file"
                 id="subcategoryimg"
@@ -111,19 +101,27 @@
               />
             </div>
 
-            <button
-              class="button button-subcat font-weight-700"
-              type="button"
-              onclick="subCategory(event)"
-            >
+            <button type="button" onclick="subCategory(event)">
+              <div
+                class="spinner-border spinner-border-sm text-light rol-spin"
+                role="status"
+              >
+                <span class="sr-only"></span>
+              </div>
               Create SubCategory
             </button>
           </form>
         </div>
 
         <!--card for subcategory list  -->
-        <div class="max">
-          <div class="row row-item"></div>
+        <div class="list_box">
+          <div class="scroll-boxs">
+            <div class="scroller-drags">
+              <div class="scroll-objects">
+                <div class="row row-item"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- form for update subcategory list -->
@@ -135,7 +133,7 @@
             </div>
 
             <form id="udform">
-              <div class="update">
+              <div class="update_name">
                 <label
                   for="Update"
                   id="email"
@@ -151,7 +149,7 @@
                 />
               </div>
 
-              <div class="image">
+              <div class="update_sub">
                 <label
                   for="category"
                   class="font-poppins font-size-16 font-weight-800"
@@ -167,19 +165,22 @@
                 />
               </div>
 
-              <div class="button">
-                <button
-                  class="button button-subcat font-weight-800"
-                  type="button"
-                  onclick="UpdateSubCategory(event)"
+              <button
+                class="button button-subcat font-weight-800"
+                type="button"
+                onclick="UpdateSubCategory(event)"
+              >
+                <div
+                  class="spinner-border spinner-border-sm text-light subroll"
+                  role="status"
                 >
-                  Update SubCategory
-                </button>
-              </div>
+                  <span class="sr-only"></span>
+                </div>
+                Update SubCategory
+              </button>
             </form>
           </div>
         </div>
-
         <div class="subItems">
           <div class="row"></div>
         </div>

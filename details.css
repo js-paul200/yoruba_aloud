@@ -7,116 +7,59 @@ main {
 }
 
 .subname {
-  box-shadow: 0px 0px 3px 1px #888888;
-  width: 65%;
+  width: 80%;
   margin: auto;
-  padding: 4rem;
+  background-color: #fff;
+  padding: 2.5rem 2.5rem;
+  border-radius: 10px;
 }
 
-.max .row {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  width: 50%;
-  padding: 1rem;
-  margin: auto;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  overflow-y: scroll;
+.subname > div {
+  border-bottom: 1px solid #2d85de;
+  margin-bottom: 1rem;
 }
-
-.box_dy {
-  padding: 35px;
-  box-shadow: 0px 0px 3px 1px #888888;
+.subname div h1 {
   margin-bottom: 1rem;
 }
 
-.search-card2 {
-}
-
-.name,
-.email {
+.name_subcategory,
+.images_subcategory {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin-top: 1rem;
 }
 
-.name input,
-.email input {
-  padding: 0.5rem;
+.name_subcategory > input,
+.images_subcategory > input {
+  padding: 10px 6px;
+  width: 70%;
 }
 
-.email input {
-  border: 1px solid rgba(0, 0, 0, 0.25);
+.name_subcategory > label,
+.images_subcategory > label {
+  font-size: 0.9rem;
 }
 
-.subname button {
-  color: #fff;
+.images_subcategory input {
+  padding: 10px 6px;
+  border: 1px solid #2d85de;
+}
+
+form button {
+  margin-top: 1.8rem;
+  padding: 1rem;
   background-color: #2d85de;
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
   border: none;
 }
 
 .updatesubcatform {
-  padding-top: 10rem;
-  position: absolute;
-  top: 1%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.71);
-}
-
-.update-subinput {
-  background-color: #fff;
-  width: 55%;
+  width: 80%;
   margin: auto;
-  padding: 3rem;
-}
-
-.update,
-.image,
-.button {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.update input {
-  width: 100%;
-  padding: 0.5rem;
-}
-
-.image input {
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  padding: 0.5rem;
-}
-
-.update-subheader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #000;
-}
-
-.update-subheader span {
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.update-subheader h2 {
-  font-size: 1.3rem;
-}
-
-.button button {
-  color: #fff;
-  background-color: #2d85de;
-  width: 100%;
-  padding: 0.5rem;
+  background-color: #fff;
+  padding: 2.5rem 2.5rem;
   border-radius: 10px;
-  border: none;
-  text-align: center;
 }
