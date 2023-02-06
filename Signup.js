@@ -60,7 +60,7 @@ function signUp(event) {
             confirmButtonColor: "#2d85de",
           });
           setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "/Index.html";
           }, 3000);
         } else {
           Swal.fire({

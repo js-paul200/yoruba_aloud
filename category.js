@@ -329,6 +329,8 @@ window.onclick = function outsideClick(e) {
 // FUNCTION FOR UPDATE CATEGORY
 function UpdateCategory(event) {
   event.preventDefault();
+  const getSpin = document.querySelector(".spin");
+  getSpin.style.display = "inline-block";
 
   const categoryImageName = document.getElementById("updatename").value;
   const categoryImage = document.getElementById("updateimage").files[0];
@@ -385,20 +387,155 @@ function UpdateCategory(event) {
 // FUNCTION FOR UPDATE CATEGORY
 
 // // FUNCTION FOR DELETE CATEGORY
-function deleteCategory(id) {
-  const dcToken = localStorage.getItem("adminlogin");
-  const cutToken = JSON.parse(dcToken);
-  const outToken = cutToken.token;
+function deleteCategory(upId) {
+  const cutToken = localStorage.getItem("adminlogin");
+  const remToken = JSON.parse(cutToken);
+  const movToken = remToken.token;
 
   const cutHeaders = new Headers();
-  cutHeaders.append("Authorization", `Bearer ${outToken}`);
+  cutHeaders.append("Authorization", `Bearer ${movToken}`);
 
   const dashReq = {
     method: "GET",
     headers: cutHeaders,
   };
-  const url = ``;
+
+  const url =
+    `https://pluralcodesandbox.com/yorubalearning/api/admin/delete_category/` +
+    `${upId}`;
+
+  fetch(url, dashReq)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+
+      if (result.status === "success") {
+        Swal.fire({
+          icon: "success",
+          text: "deleted successfully",
+          confirmButtonColor: "#2D85DE",
+        });
+        setTimeout(() => {
+          location.reload();
+        }, 3000);
+      } else {
+        Swal.fire({
+          icon: "info",
+          text: "Deletion Unsuccessful!",
+          confirmButtonColor: "#2D85DE",
+        });
+      }
+    })
+    .catch((error) => console.log("error", error));
 }
-// FUNCTION FOR UPDATE CATEGORY
+// FUNCTION FOR DELETE CATEGORY
 
 // *******************************************//
+// FUNCTION TO CREATE SUBCATEGORY
+function subCategory(event) {
+  event.preventDefault();
+  const theId = localStorage.getItem("upId");
+
+  const subcatToken = localStorage.getItem("adminlogin");
+  const thecatToken = JSON.parse(subcatToken);
+  const catsubToken = thecatToken.token;
+
+  const subcatname = document.getElementById("subcategoryname").value;
+  const subcatImage = document.getElementById("subcategoryimg").files[0];
+
+  if (subcatname === "" || subcatImage === "") {
+    Swal.fire({
+      icon: "info",
+      text: "All fields are required!",
+      confirmButtonColor: "#2D85DE",
+    });
+  } else {
+    const spinRoll = document.querySelector(".rol-spin");
+    spinRoll.style.display = "inline-block";
+
+    const subcatHeaders = new Headers();
+    subcatHeaders.append("Authorization", `Bearer ${catsubToken}`);
+
+    const formData = new FormData();
+    formData.append("name", subcatname);
+    formData.append("image", subcatImage);
+    formData.append("category_id", theId);
+
+    const dashReq = {
+      method: "POST",
+      headers: subcatHeaders,
+      body: formData,
+    };
+    const url =
+      "https://pluralcodesandbox.com/yorubalearning/api/admin/create_subcategory";
+    fetch(url, dashReq)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+
+        if (result.status === "success") {
+          Swal.fire({
+            icon: "success",
+            text: "Subcategory Created Successfully",
+            confirmButtonColor: "#2D85DE",
+          });
+          setTimeout(() => {
+            location.reload();
+          }, 3000);
+        } else {
+          Swal.fire({
+            icon: "info",
+            text: "Unsuccessful!",
+            confirmButtonColor: "#2D85DE",
+          });
+        }
+      })
+      .catch((error) => console.log("error", error));
+  }
+}
+// XXXFUNCTION TO CREATE SUBCATEGORY
+
+// FUNCTION THAT GETS SUB CATEGORY LIST
+function getSublist() {
+  const params = new URLSearchParams(window.location.search);
+  let getId = params.get("id");
+
+  const getSublist = document.querySelector(".row-item");
+  const getlistitems = localStorage.getItem("adminlogin");
+  const tokens = JSON.parse(getlistitems);
+  const getlist = tokens.token;
+
+  const subcatHeaders = new Headers();
+  subcatHeaders.append("Authorization", `Bearer ${getlist}`);
+
+  const dashReq = {
+    method: "GET",
+    headers: subcatHeaders,
+  };
+
+  let data = [];
+
+  const url = `http://pluralcodesandbox.com/yorubalearning/api/admin/category_details/${getId}`;
+
+  fetch(url, dashReq)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      result.map((item) => {
+        data += `
+          <div class="col-sm-12 col-md-12 col-lg-6">
+              <div class="search-card2">
+              <a href="details.html?id=${item.id}&name=${item.name}"><img src=${item.image} alt="image" /></a>
+              <p>${item.name}</p>
+              <div class="text-right">
+                  <button class="update-button2" onclick="updatesubcat(${item.id})">Update</button>
+              </div>
+              </div>
+          </div>    
+          `;
+        getSublist.innerHTML = data;
+      });
+    })
+    .catch((error) => console.log("error", error));
+}
+getSublist();

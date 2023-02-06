@@ -11,6 +11,7 @@
 
 body {
   overflow-x: hidden;
+  /* overflow-anchor: none; */
 }
 
 .sidebar {
@@ -330,15 +331,15 @@ table td {
 
 /* The Close Button */
 .close {
+  cursor: pointer;
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
+.close:hover {
+  color: #2d85de;
   text-decoration: none;
   cursor: pointer;
 }
@@ -427,6 +428,7 @@ table td {
   width: 100%;
   padding: 25px 18px;
   border-radius: 15px;
+  margin-bottom: 2rem;
 }
 
 .category_box form {
@@ -522,18 +524,7 @@ table td {
   margin-bottom: 1rem;
 }
 
-.updateform {
-  width: 400px;
-  margin: auto;
-}
-
 /* update modal */
-
-#update_form {
-  padding: 4rem 5rem;
-  width: 100%;
-}
-
 .updateform {
   display: none;
   position: fixed;
@@ -542,80 +533,94 @@ table td {
   top: 0;
   height: 100%;
   width: 100%;
+  margin: auto;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  padding: 5rem;
 }
-.update-input {
-  width: 35vw;
-  margin: 10% auto;
-  box-shadow: 0 5px 8px 0 rgb(0 0 0 / 20%), 0 7px 20px 0 rgb(0 0 0 / 17%);
-  height: 55vh;
-  background: #fff;
-  overflow: hidden;
+
+.updateform .update-input {
+  width: 50%;
+  padding: 1rem;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 5rem;
+  height: auto;
 }
-.update-header {
+
+.updateform .update-header {
+  background-color: #2d85de;
+  color: #fff;
+  padding: 16px 9px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: #2d85de;
-  padding: 15px;
-  color: #fff;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
 }
-.update-header h2 {
-  margin: 0;
-}
-.update_modal_btn {
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
-}
-.update_modal_btn:hover,
-.update_modal_btn:focus {
-  color: rgba(255, 255, 255, 0.455);
-  text-decoration: none;
-  cursor: pointer;
+
+.updateform .update-header > span > i {
+  font-size: 25px;
 }
 
 .change_image {
-  margin-right: 1rem;
-  margin-top: 1rem;
-  float: right;
-  background: #2d85de;
-  border: none;
-  padding: 0.6rem 1rem;
-  color: #fff;
   cursor: pointer;
-}
-
-.change_image:hover,
-.update_btn:hover {
-  background: #2d86deea;
-}
-
-#update_form #updatename {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  margin-bottom: 1rem;
-}
-
-#update_form label {
-  color: #2d85de;
-}
-
-#update_form #updateimage {
-  border: 1px solid rgba(0, 0, 0, 0.433);
-  width: 100%;
-  padding: 0.6rem 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.update_btn {
-  padding: 0.6rem 1rem;
   background-color: #2d85de;
   color: #fff;
   border: none;
+  outline: none;
+  padding: 8px 10px;
+  float: right;
+  margin-top: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+#update_form {
+  margin: 4rem auto;
+  width: 100%;
+}
+
+.updateName,
+.updateImage {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.updateName > label,
+.updateImage > label {
+  font-size: 1rem;
+  color: #2d85de;
+  padding: 10px 5px;
+}
+
+.updateName > input {
+  padding: 10px 3px;
+  width: 70%;
+  text-align: center;
+  border: 1px solid #2d85de;
+}
+
+.updateImage > input {
+  padding: 6px 3px;
+  width: 100%;
+  text-align: start;
+  border: 1px solid #2d85de;
+  color: #000;
+}
+
+#update_form button {
+  background: #2d85de;
+  color: #fff;
+  padding: 10px 5px;
+  float: right;
+  margin: 1rem auto;
+  border: none;
   cursor: pointer;
+}
+
+#update_form button:hover,
+.change_image:hover {
+  background-color: #2d86dec9;
 }
 
 /* media query */
@@ -798,7 +803,7 @@ table td {
     margin: auto 0.5rem;
   }
 
-  #update_form {
+  update_form {
     margin-top: 2rem;
     padding: 1rem 1.1rem;
   }
@@ -817,6 +822,7 @@ table td {
     width: 100%;
   }
 }
+
 @media (max-width: 400px) {
   .sidebar {
     width: 0;
@@ -836,26 +842,35 @@ table td {
     width: 100%;
     left: 0;
   }
+
   .sidebar.active ~ .home-section nav {
     left: 60px;
     width: calc(100% - 60px);
   }
 
+  .modal {
+    overflow-x: hidden;
+  }
+
   .modal-content {
+    margin: auto;
     width: 90%;
+  }
+
+  .modal-content .card-details {
+    font-size: 85%;
   }
 
   .category_main {
     width: 100vw;
-    margin: auto 1.8rem;
+    margin: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
   .category_main .category_section .category_box {
-    width: 85vw;
-    padding-right: 2rem;
+    width: 90vw;
   }
 
   .category_main .category_section .category_done {
@@ -864,6 +879,6 @@ table td {
   }
 
   .search-card {
-    margin: auto 1rem;
+    margin: 1rem auto;
   }
 }

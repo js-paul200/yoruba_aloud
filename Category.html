@@ -245,10 +245,10 @@
           <div class="update-header">
             <h2>Update category</h2>
             <span class="update_modal_btn" onclick="closeCatModal()"
-              ><i class="bx bx-window-close"></i
+              ><i class="bx bx-x"></i
             ></span>
           </div>
-          <button class="change_image" onclick="changeimage()">
+          <!-- <button class="change_image" onclick="changeimage()">
             <div
               class="spinner-border spinner-border-sm text-light roller"
               role="status"
@@ -256,25 +256,29 @@
               <span class="sr-only"></span>
             </div>
             Change image
-          </button>
+          </button> -->
 
           <form id="update_form">
-            <label for="Update" id="email">Update Name</label>
+            <div class="updateName">
+              <label for="Update" id="email">Update Name</label>
 
-            <input
-              type="text"
-              name="category"
-              id="updatename"
-              placeholder="Enter Categories Here"
-            />
+              <input
+                type="text"
+                name="category"
+                id="updatename"
+                placeholder="Enter Categories Here"
+              />
+            </div>
 
-            <label for="category"> Update Category Images</label>
-            <input
-              type="file"
-              name="img"
-              id="updateimage"
-              placeholder="Enter Categories Here"
-            />
+            <div class="updateImage">
+              <label for="category"> Update Category Images</label>
+              <input
+                type="file"
+                name="img"
+                id="updateimage"
+                placeholder="Enter Categories Here"
+              />
+            </div>
 
             <button
               class="update_btn"
