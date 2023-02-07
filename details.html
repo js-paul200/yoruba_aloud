@@ -79,7 +79,7 @@
       <main>
         <!-- create subcategory form -->
         <div class="subname">
-          <div><h1>Update Category</h1></div>
+          <div><h1>SubCategory</h1></div>
           <form action="subcatform">
             <div class="name_subcategory">
               <label for="name">Subcategory Name</label>
@@ -114,13 +114,9 @@
         </div>
 
         <!--card for subcategory list  -->
-        <div class="list_box">
-          <div class="scroll-boxs">
-            <div class="scroller-drags">
-              <div class="scroll-objects">
-                <div class="row row-item"></div>
-              </div>
-            </div>
+        <div class="subCategoryList">
+          <div class="subCategoryContainer">
+            <div class="subCatList"></div>
           </div>
         </div>
 
@@ -128,8 +124,10 @@
         <div id="updatesubmodal" class="updatesubcatform">
           <div class="update-subinput">
             <div class="update-subheader">
-              <h2>Update Subcategory</h2>
-              <span class="cut" onclick="cutmodal()">&times;</span>
+              <h2>Updated Subcategory</h2>
+              <span class="cut" onclick="cutmodal()"
+                ><i class="bx bx-x"></i
+              ></span>
             </div>
 
             <form id="udform">

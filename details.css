@@ -14,11 +14,14 @@ main {
   border-radius: 10px;
 }
 
-.subname > div {
+.subname > div,
+.update-subheader {
   border-bottom: 1px solid #2d85de;
   margin-bottom: 1rem;
 }
-.subname div h1 {
+
+.subname div h1,
+.update-subheader > h2 {
   margin-bottom: 1rem;
 }
 
@@ -57,9 +60,51 @@ form button {
 }
 
 .updatesubcatform {
+  display: none;
   width: 80%;
   margin: auto;
+  margin-top: 2rem;
   background-color: #fff;
   padding: 2.5rem 2.5rem;
   border-radius: 10px;
+}
+
+.updatesubcatform .update-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.updatesubcatform .update-subheader .cut .bx-x {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.update_name,
+.update_sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.update_name > input,
+.update_sub > input {
+  padding: 10px 6px;
+  width: 70%;
+}
+
+.update_sub > input {
+  padding: 10px 6px;
+  border: 1px solid #2d85de;
+}
+
+.update_name > label,
+.update_sub > label {
+  font-size: 0.9rem;
+}
+
+.mainBoxy {
+  background-color: black;
 }
