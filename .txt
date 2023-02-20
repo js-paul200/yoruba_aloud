@@ -1,0 +1,105 @@
+        <!-- create subcategory form -->
+        <div class="subname">
+          <div><h1>SubCategory</h1></div>
+          <form action="subcatform">
+            <div class="name_subcategory">
+              <label for="name">Subcategory Name</label>
+              <input
+                type="text"
+                id="subcategoryname"
+                class="input mb-3"
+                placeholder="Enter Subcategory Name"
+              />
+            </div>
+
+            <div class="images_subcategory">
+              <label for="Email">Subcategory Images</label>
+              <input
+                type="file"
+                id="subcategoryimg"
+                class="input mb-3"
+                placeholder="Enter Subcategory Image"
+              />
+            </div>
+
+            <button type="button" onclick="subCategory(event)">
+              <div
+                class="spinner-border spinner-border-sm text-light rol-spin"
+                role="status"
+              >
+                <span class="sr-only"></span>
+              </div>
+              Create SubCategory
+            </button>
+          </form>
+        </div>
+
+        <!--card for subcategory list  -->
+        <div class="subCategoryList">
+          <div class="subCategoryContainer">
+            <div class="subCatList"></div>
+          </div>
+        </div>
+
+        <!-- form for update subcategory list -->
+        <div id="updatesubmodal" class="updatesubcatform">
+          <div class="update-subinput">
+            <div class="update-subheader">
+              <h2>Updated Subcategory</h2>
+              <span class="cut" onclick="cutmodal()"
+                ><i class="bx bx-x"></i
+              ></span>
+            </div>
+
+            <form id="udform">
+              <div class="update_name">
+                <label
+                  for="Update"
+                  id="email"
+                  class="font-poppins font-size-16 font-weight-800"
+                  >Update SubcategoryName</label
+                >
+                <input
+                  type="text"
+                  name="category"
+                  id="updatesubcatname"
+                  class="mb-3"
+                  placeholder="Enter Categories Here"
+                />
+              </div>
+
+              <div class="update_sub">
+                <label
+                  for="category"
+                  class="font-poppins font-size-16 font-weight-800"
+                >
+                  Update SubCategory Image</label
+                >
+                <input
+                  type="file"
+                  name="img"
+                  id="updatesubcatimage"
+                  class="input mb-3"
+                  placeholder="Enter Categories Here"
+                />
+              </div>
+
+              <button
+                class="button button-subcat font-weight-800"
+                type="button"
+                onclick="UpdateSubCategory(event)"
+              >
+                <div
+                  class="spinner-border spinner-border-sm text-light subroll"
+                  role="status"
+                >
+                  <span class="sr-only"></span>
+                </div>
+                Update SubCategory
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="subItems">
+          <div class="row"></div>
+        </div>

@@ -61,14 +61,13 @@ function subCategory(event) {
   }
 }
 // XXXFUNCTION TO CREATE SUBCATEGORY
-
 // function to get subcategory list
-function getSublist() {
+function getSubCatlist() {
   const params = new URLSearchParams(window.location.search);
   let getId = params.get("id");
 
-  const getSublist = document.querySelector(".subCatList");
   const getlistitems = localStorage.getItem("adminlogin");
+  console.log(getlistitems);
   const tokens = JSON.parse(getlistitems);
   const getlist = tokens.token;
 
@@ -82,15 +81,16 @@ function getSublist() {
 
   let data = [];
 
-  const url = `http://pluralcodesandbox.com/yorubalearning/api/admin/category_details/${getId}`;
+  const url = `http://pluralcodesandbox.com/yorubalearning/api/admin/category_details//${getId}`;
 
   fetch(url, dashReq)
     .then((response) => response.json())
     .then((result) => {
       console.log(result);
+      const getSublist = document.querySelector(".subCatItem");
       result.map((item) => {
         data += `
-          <div class="col-sm-12 col-md-12 col-lg-6">
+          <div class="main">
               <div class="search-card2">
               <a href="details.html?id=${item.id}&name=${item.name}"><img src=${item.image} alt="image" /></a>
               <p>${item.name}</p>
@@ -101,12 +101,11 @@ function getSublist() {
           </div>    
           `;
         getSublist.innerHTML = data;
-        console.log(data);
       });
     })
     .catch((error) => console.log("error", error));
 }
-getSublist();
+getSubCatlist();
 
 // function to update a subcategory
 function UpdateSubCategory(event) {

@@ -68,6 +68,7 @@
         </li>
       </ul>
     </div>
+
     <section class="home-section">
       <nav>
         <div class="sidebar-button">
@@ -79,26 +80,20 @@
       <main>
         <!-- create subcategory form -->
         <div class="subname">
-          <div><h1>SubCategory</h1></div>
+          <div><h1>Update Category</h1></div>
           <form action="subcatform">
             <div class="name_subcategory">
               <label for="name">Subcategory Name</label>
               <input
                 type="text"
                 id="subcategoryname"
-                class="input mb-3"
                 placeholder="Enter Subcategory Name"
               />
             </div>
 
             <div class="images_subcategory">
               <label for="Email">Subcategory Images</label>
-              <input
-                type="file"
-                id="subcategoryimg"
-                class="input mb-3"
-                placeholder="Enter Subcategory Image"
-              />
+              <input type="file" id="subcategoryimg" />
             </div>
 
             <button type="button" onclick="subCategory(event)">
@@ -114,17 +109,16 @@
         </div>
 
         <!--card for subcategory list  -->
-        <div class="subCategoryList">
-          <div class="subCategoryContainer">
-            <div class="subCatList"></div>
-          </div>
+
+        <div class="subCategoryLists">
+          <div class="subCatItem"></div>
         </div>
 
         <!-- form for update subcategory list -->
         <div id="updatesubmodal" class="updatesubcatform">
           <div class="update-subinput">
             <div class="update-subheader">
-              <h2>Updated Subcategory</h2>
+              <h2>Update Subcategory</h2>
               <span class="cut" onclick="cutmodal()"
                 ><i class="bx bx-x"></i
               ></span>

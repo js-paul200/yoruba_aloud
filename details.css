@@ -105,6 +105,21 @@ form button {
   font-size: 0.9rem;
 }
 
+.subCategoryLists .subCatItem {
+  height: 300px;
+  width: 80%;
+  overflow-y: scroll;
+  margin: auto;
+  margin-top: 5rem;
+  background-color: #aaa;
+}
+
 .mainBoxy {
+  height: 180px;
+  width: 180px;
+  background-color: white;
+}
+
+.main .search-card2 {
   background-color: black;
 }
