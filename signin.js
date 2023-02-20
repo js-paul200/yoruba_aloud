@@ -30,9 +30,9 @@ function signIn(event) {
       .then((result) => {
         console.log(result);
         localStorage.setItem("adminlogin", JSON.stringify(result));
-        const myDetails = localStorage.getItem("adminlogin");
-        const theDetails = JSON.parse(myDetails);
-        if (theDetails.hasOwnProperty("email")) {
+        const myAdminId = localStorage.getItem("adminlogin");
+        const userDetails = JSON.parse(myAdminId);
+        if (userDetails.hasOwnProperty("email")) {
           window.location.href = "/Dashbaord.html";
         } else {
           Swal.fire({
@@ -47,5 +47,3 @@ function signIn(event) {
   }
 }
 // FUNCTIONS FOR SIGNIN
-
-
